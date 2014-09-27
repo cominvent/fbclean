@@ -32,8 +32,7 @@ def do_delete_post(dialog):
 
     time.sleep(2)
     try:
-        alert_btn = find_button('Delete Post')
-        alert_btn.click()
+        find_button('Delete Post').click()
         time.sleep(6)
     except:
         pass
@@ -54,7 +53,7 @@ def do_delete_photo(dialog):
     try:
         find_action(dialog, 'Report/Remove Tag').click()
         time.sleep(1)
-        dialog.find_element_by_name("untag").check()
+        browser.find_element_by_name("untag").click()
         time.sleep(0.1)
         find_button('Remove Tag').click()
         time.sleep(5)
@@ -69,10 +68,10 @@ def do_remove_tag(dialog):
     e.click()
     time.sleep(1)
     try:
-        dialog.find_element_by_name("untag").check()
+        browser.find_element_by_name("untag").click()
         time.sleep(0.1)
-        alert_btn = find_button('Remove Tag')
-        alert_btn.click()
+        find_button('Remove Tag').click()
+        time.sleep(5)
     except:
         try:
             find_button('Continue').click()
