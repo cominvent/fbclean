@@ -89,7 +89,7 @@ def do_hide(dialog):
     print("Hid")
 
 
-def delete(reload_site):
+def clean(reload_site):
     if(reload_site):
         browser.get('https://www.facebook.com/%s/allactivity' % user)
 
@@ -143,7 +143,7 @@ def main():
     pw.submit()
     r = True
     while(True):
-        r = delete(r)
+        r = clean(r)
         if(not r):
             # print("Scrolling down")
             for i in range(0, 10):
