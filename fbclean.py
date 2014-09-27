@@ -68,17 +68,20 @@ def do_remove_tag(dialog):
     e.click()
     time.sleep(1)
     try:
-        browser.find_element_by_name("untag").click()
-        time.sleep(0.1)
-        find_button('Remove Tag').click()
-        time.sleep(5)
+        browser.find_element_by_name('submit').click()
     except:
         try:
-            find_button('Continue').click()
+            browser.find_element_by_name("untag").click()
             time.sleep(0.1)
-            find_button('Continue').click()
+            find_button('Remove Tag').click()
+            time.sleep(5)
         except:
-            pass
+            try:
+                find_button('Continue').click()
+                time.sleep(0.1)
+                find_button('Continue').click()
+            except:
+                pass
     print("Tag removed")
 
 
